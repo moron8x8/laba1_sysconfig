@@ -41,15 +41,15 @@ Workflow автоматически запускает программу на �
 
 ### Linux
 
-![Результат работы на Linux](pic/Screenshot%20From%202026-09-30%2021-51-17.png)
+![Результат работы на Linux](pic/linux_output.png)
 
 ### macOS
 
-![Результат работы на macOS](pic/Screenshot%20From%202026-09-30%2021-51-38.png)
+![Результат работы на macOS](pic/mac_output.png)
 
 ### Windows
 
-![Результат работы на Windows](pic/Screenshot%20From%202026-09-30%2021-51-58.png)
+![Результат работы на Windows](pic/win_output.png)
 
 
 
