@@ -11,8 +11,6 @@ def read_file(path):
 
 
 class OperatingSystem:
-
-
   def __init__(self):
     self.info = {}
 
@@ -56,9 +54,9 @@ class LinuxOS(OperatingSystem):
 
   def get_cpu_cores(self):
     for line in self.cpu_info.splitlines():
-        l = len("cpu cores")
-        if line[:l] == "cpu cores":
-          return line.split(":", 1)[1].strip()
+      l = len("cpu cores")
+      if line[:l] == "cpu cores":
+        return line.split(":", 1)[1].strip()
 
   def get_distr(self):
     for line in self.os_release.splitlines():
@@ -95,26 +93,26 @@ class LinuxOS(OperatingSystem):
 class WindowsOS(OperatingSystem):
   def __init__(self):
     super().__init__()
-    self.win_ver = self.win_version()
+    self.win_ver = self.get_win_version()
 
   def get_extra(self):
     return {
       "windows_release": self.win_ver[0],
       "windows_build": self.win_ver[1],
-      "windows_edition": self.win_edition(),
+      "windows_edition": self.get_win_edition(),
     }
 
-  def win_version(self): return platform.win32_ver()
-  def win_edition(self): return platform.win32_edition()
+  def get_win_version(self): return platform.win32_ver()
+  def get_win_edition(self): return platform.win32_edition()
 
 
 class MacOS(OperatingSystem):
   def __init__(self):
     super().__init__()
-    self.mac_ver = self.mac_version()
+    self.mac_ver = self.get_mac_version()
 
 
-  def mac_version(self): return platform.mac_ver()[0]
+  def get_mac_version(self): return platform.mac_ver()[0]
 
   def get_extra(self):
     return {
